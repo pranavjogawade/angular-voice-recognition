@@ -1,0 +1,29 @@
+.mic-start {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: url(/assets/mic-icon.png) no-repeat center;
+  background-size: 40px;
+  width: 50px;
+  /* border: 1px solid blue; */
+  height: 50px;
+  padding: 11px;
+  border-radius: 50%;
+  outline: 0;
+  z-index: 99999;
+  background-color: #f5f5f5;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}

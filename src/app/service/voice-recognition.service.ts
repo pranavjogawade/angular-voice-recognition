@@ -35,24 +35,29 @@ export class VoiceRecognitionService {
     this.recognition.start();
     console.log("Speech recognition started")
     this.recognition.addEventListener('end', (condition) => {
-      if (this.isStoppedSpeechRecog) {
-        this.recognition.stop();
-        console.log("End speech recognition")
-      } else {
-        this.wordConcat()
-        this.recognition.start();
-      }
+      // if (this.isStoppedSpeechRecog) {
+      //   this.recognition.stop();
+      //   console.log("End speech recognition")
+      // } else {
+      //   this.wordConcat()
+      //   this.recognition.start();
+      // }
+      this.isStoppedSpeechRecog = true;
+      this.formatOutput()
+      this.recognition.stop();
+      console.log("End speech recognition");
     });
   }
   stop() {
     this.isStoppedSpeechRecog = true;
-    this.wordConcat()
+    this.formatOutput()
     this.recognition.stop();
     console.log("End speech recognition")
   }
 
-  wordConcat() {
-    this.text = this.text + ' ' + this.tempWords + '.';
-    this.tempWords = '';
+  formatOutput() {
+    // this.text = this.text + ' ' + this.tempWords + '.';
+    this.text = this.tempWords;
+    //this.tempWords = '';
   }
 }

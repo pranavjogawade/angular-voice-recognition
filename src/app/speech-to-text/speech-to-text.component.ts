@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { VoiceRecognitionService } from '../service/voice-recognition.service'
 
 @Component({
@@ -10,10 +10,34 @@ import { VoiceRecognitionService } from '../service/voice-recognition.service'
 export class SpeechToTextComponent implements OnInit {
 
   text: string;
+  test: any;
+  name = 'Angular 6';
+  email="";
+  aa:boolean=false;
+
+  users=[{
+    id:'Pranav',
+    email:'abc@gmail.com'
+  },{
+    id:'Veeramani',
+    email:'xyz@hotmail.com'
+  },{
+    id:'Aravind',
+    email:'aravind@citi.com'
+  },{
+    id:'Citibank',
+    email:'test@gmail.com'
+  }]
+
+  setIndex(ii){
+    this.aa=ii;
+    console.log
+  }
+
 
   constructor(
     public service : VoiceRecognitionService
-  ) { 
+  ) {
     this.service.init()
    }
 
@@ -27,5 +51,10 @@ export class SpeechToTextComponent implements OnInit {
   stopService(){
     this.service.stop()
   }
+  // ngOnChanges(changes: SimpleChanges) {
+  //   // changes.prop contains the old and the new value...
+  //   this.test = changes;
+  //   alert(changes)
+  // }
 
 }
